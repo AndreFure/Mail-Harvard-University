@@ -3,13 +3,30 @@ textarea {
 }
 
 .email {
-    border: 1px solid black;
-    display: flex;
+    border-radius: 5px;
+    border: 1px solid #f5f4f4;
     padding: 5px;
+}
+
+.email:hover {
+    border-radius: 5px;
+    background: linear-gradient(145deg, #ffffff, #d8e6e6);
+    box-shadow: 6px 6px 9px #d9d9d9, -6px -6px 9px #ffffff;
+    transform: scaleY(5px);
 }
 
 #emails-view {
     text-align: center;
+    display: none;
+    margin-bottom: 30px;
+}
+
+#compose-view {
+    display: block;
+}
+
+#view-email {
+    display: none;
 }
 
 #email-subject {
@@ -28,10 +45,11 @@ textarea {
     text-decoration: none;
 }
 
-#header {
+.headerMail {
     margin: 10px 0;
-    border-bottom: 0.5px solid silver;
+    border-bottom: 1px solid black;
     padding-bottom: 20px;
+    background: black;
 }
 
 .email:hover {
@@ -42,6 +60,14 @@ p {
     margin-bottom: 0;
 }
 
-#emails-view {
+.pSubject {
     margin-bottom: 30px;
+}
+
+.none {
+    display: none;
+}
+
+.block {
+    display: block;
 }

@@ -56,7 +56,7 @@ function load_mailbox(mailbox) {
 
         document.querySelector('#emails-view').append(div);
         if (element.read) {
-          document.querySelector(`#email${element.id}`).style.background = 'gray';
+          document.querySelector(`#email${element.id}`).style.background = 'azure';
         }
         document.querySelector(`#email${element.id}`).addEventListener('click', () => view_email(element.id, mailbox));
 
@@ -64,6 +64,8 @@ function load_mailbox(mailbox) {
       });
     });
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 function create_email() {
   const recipients = document.querySelector("#compose-recipients").value;
@@ -84,8 +86,6 @@ function create_email() {
       console.log(result);
     })
     .then(load_mailbox('sent'));
-
-
 }
 
 function view_email(id, mailbox) {
@@ -98,11 +98,11 @@ function view_email(id, mailbox) {
     .then(data => {
       document.querySelector('#view-email').innerHTML =
         `
-      <div id = "header">
+      <div id="headerMail" class="headerMail">
         <p><b>From:</b>&nbsp;${data.sender}</p>
         <p><b>To:</b>&nbsp;${data.recipients}</p>
-        <p><b>Subject:</b>&nbsp;${data.subject}</p>
         <p><b>Timestamp</b>&nbsp;${data.timestamp}</p>
+        <p class"pSubject"><b>Subject:</b>&nbsp;${data.subject}</p>
         <button class="btn btn-sm btn-outline-primary" id="Reply">Reply</button>
         <button class="btn btn-sm btn-outline-primary" id="Archive">Archive</button>
       </div>
@@ -151,12 +151,7 @@ function view_email(id, mailbox) {
             }
           })
         );
-
-
-
-
     });
-
 }
 
 function reply_to_email(id) {
@@ -180,7 +175,5 @@ function reply_to_email(id) {
       document.querySelector('#compose-subject').disabled = true;
 
       document.querySelector('#compose-body').value = `On ${data.timestamp} ${data.sender} wrote: ${data.body}`;
-    }
-    )
-
+    })
 }
