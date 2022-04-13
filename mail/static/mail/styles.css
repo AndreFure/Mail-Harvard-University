@@ -41,7 +41,6 @@ textarea {
 }
 
 #email-link {
-    color: black;
     text-decoration: none;
 }
 
@@ -49,7 +48,6 @@ textarea {
     margin: 10px 0;
     border-bottom: 1px solid black;
     padding-bottom: 20px;
-    background: black;
 }
 
 .email:hover {
@@ -62,6 +60,7 @@ p {
 
 .pSubject {
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .none {
@@ -70,4 +69,22 @@ p {
 
 .block {
     display: block;
+}
+
+.btnBlue {
+    border-radius: 20px;
+    width: 150px !important;
+    height: 40px !important;
+    background: linear-gradient(145deg, #1bffff, #17d8e6);
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.btnBlue:hover {
+    background: linear-gradient(315deg, #e3eeff, #bfc8df);
+    transform: translateY(-4px);
+    color: #1c192a;
+    text-decoration: none;
 }

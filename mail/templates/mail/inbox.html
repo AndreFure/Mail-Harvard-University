@@ -3,11 +3,11 @@
 
 {% block body %}
 <h2>{{ request.user.email }}</h2>
-<button class="btn btn-sm btn-outline-primary" id="inbox">Inbox</button>
-<button class="btn btn-sm btn-outline-primary" id="compose">Compose</button>
-<button class="btn btn-sm btn-outline-primary" id="sent">Sent</button>
-<button class="btn btn-sm btn-outline-primary" id="archived">Archived</button>
-<a class="btn btn-sm btn-outline-primary" href="{% url 'logout' %}">Log Out</a>
+<button class="btnBlue" id="inbox">Inbox</button>
+<button class="btnBlue" id="compose">Compose</button>
+<button class="btnBlue" id="sent">Sent</button>
+<button class="btnBlue" id="archived">Archived</button>
+<a class="btn btn-outline-dark" href="{% url 'logout' %}">Log Out</a>
 <hr>
 
 <div id="emails-view" class="none">
@@ -36,7 +36,7 @@
             <input class="form-control" id="compose-subject" placeholder="Subject">
         </div>
         <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
-        <input type="submit" class="btn btn-primary" id="submit" />
+        <input type="submit" class="btnBlue" id="submit" />
     </form>
 </div>
 
@@ -47,5 +47,3 @@
 {% block script %}
 <script src="{% static 'mail/inbox.js' %}"></script>
 {% endblock %}
-
-emails-view
